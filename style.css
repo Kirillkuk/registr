@@ -1,0 +1,108 @@
+body{
+    background-color:lightsteelblue;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+
+}
+*{
+    padding:0;
+    margin:0;
+}
+header, footer {
+    background-color:grey;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+
+}
+header > h1{
+    text-align: center;
+}
+footer > p{
+    text-align:center;
+}
+.content{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+}
+footer{
+    margin-top:auto;
+}
+
+nav{
+    border:2px outset LightSteelBlue;
+    /*font-size: 25px;*/
+    padding:10px;
+    margin-bottom:15px;
+}
+h1{
+    margin-bottom:20px;
+}
+a{
+    padding-right: 15px;
+    color: grey;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size: 25px;
+}
+a:hover{
+    color: mintcream;
+    text-decoration: none;
+}
+.labels{
+    display:flex;
+    flex-direction:column;
+
+}
+.sec{
+    display:flex;
+    flex-direction:column;
+}
+.lab{
+    background-color: PaleGoldenrod;
+    border:1px solid grey;
+
+}
+form{
+    display:flex;
+    flex-direction:column;
+
+
+}
+section{
+    display:flex;
+    flex-direction:column;
+
+}
+.descrip{
+    width:240px;
+    height:50px;
+}
+
+.di{
+    display:flex;
+    flex-direction:row;
+}
+label{
+    margin-bottom:8px;
+    margin-right:5px;
+}
+input{
+    margin-bottom:7px;
+}
+input[type=submit]{
+    width:240px;
+    margin-top:25px;
+
+}
+.fu{
+    display:flex;
+    flex-direction:row;
+
+
+}
