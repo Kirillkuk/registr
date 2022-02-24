@@ -5,7 +5,7 @@
     {
         require ("header.html");
         require ("menu.html");
-        echo("");
+
         ?>
 
         <div class="content">
