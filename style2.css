@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    padding-top:20px;
+}
+
+form{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    border: 4px double black;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.inp{
+    width: 200px;
+    height:20px;
+    /*padding: 5px;*/
+    border-radius:5px;
+    border: 0.5px solid black;
+    margin-top:15px;
+    padding-left:5px;
+}
+.inpred{
+    width: 200px;
+    height:20px;
+    /*padding: 5px;*/
+    border-radius:5px;
+    border: 0.5px solid red;
+    margin-top:15px;
+    padding-left:5px;
+}
+.inp2{
+    height:20px;
+    width:20px;
+}
+.lab{
+    margin-bottom:15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+.secForGender{
+    padding-top:10px;
+    padding-bottom:5px;
+    width:100%;
+    border:4px double black;
+    border-width: 4px 0px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.sel{
+    border-radius:5px;
+}
+.secForCity{
+    padding-top:10px;
+    padding-bottom:20px;
+    width:100%;
+    border:4px double black;
+    border-width: 0px 0px 4px 0px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+  
+}
+.secForChangeTheme{
+    padding-top:10px;
+    padding-bottom:20px;
+    width:100%;
+    border:4px double black;
+    border-width: 0px 0px 4px 0px;
+    margin-bottom:20px;
+    
+    
+}
+.inpAbsolute{
+    position:absolute;
+    top:36px;
+    right:410px;
+    border-radius:5px;
+    border: 0.5px solid black;
+    height:25px;
+    padding:5px;
+}
+.MainLabels{
+    margin-top:10px;
+}
+.MainLabels2{
+    margin-top:20px;
+}
+.di{
+    width:60px;
+    height:40px;
+    background-color: chocolate;
+}
+.sec{
+    width:90px;
+    height:60px;
+    background-color: blue;
+
+
+}
+.dark{
+    background-color:black;
+    color:white;
+}
+.light{
+    background-color:white;
+    color:black;
+}
+.light_border{
+    border-color:black;
+}
+.dark_border{
+    border-color:white;
+}
+.visiblenone{
+    display:none;
+    color:red;
+    font-size: 12px;
+}
+.visibleinitial{
+    display:initial;
+    color:red;
+    font-size: 12px;
+}

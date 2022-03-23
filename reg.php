@@ -14,7 +14,10 @@ require ("menu.html");
         // mysqli_select_db($con,$db) or die("no db");
 
         //if (isset($_GET['log']) && isset($_GET['pas']))
-        //{
+        //
+        
+        
+        
             $log = $_GET['log'];
             $pas = $_GET['pas'];
 
@@ -30,7 +33,7 @@ require ("menu.html");
             else{
                 print("Пользователь с данным логином уже существует!");
             }
-
+        
         //}
 
     }

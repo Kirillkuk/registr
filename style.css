@@ -11,7 +11,7 @@ body{
 }
 header, footer {
     background-color:grey;
-    color:white;
+    color:beige;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -39,6 +39,8 @@ nav{
     /*font-size: 25px;*/
     padding:10px;
     margin-bottom:15px;
+
+
 }
 h1{
     margin-bottom:20px;
@@ -100,9 +102,15 @@ input[type=submit]{
     margin-top:25px;
 
 }
+.bu{
+    
+    margin-top:0px;
+}
 .fu{
     display:flex;
     flex-direction:row;
 
 
 }
+
+

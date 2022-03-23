@@ -3,6 +3,7 @@ session_start();
 if (!empty($_SESSION["login"])){
     Header("Location: content.php");
 }
+
 require ("header.html");
 require ("menu.html");
     if (isset($_GET["sub"]))
@@ -38,6 +39,7 @@ require ("menu.html");
 
 
     }
+    
 
 ?>
 <div class="content">

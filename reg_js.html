@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style2.css" rel = "stylesheet" type = "text/css">
+    <script src="script.js"></script>
+</head>
+<body onload="SetTheme()">
+    <form action="javascript:reg()" method="get" name="registr">
+        <section class="secForChangeTheme">
+        </section>
+        <input type="button" class="inpAbsolute" value="Сменить тему" onclick="ChangeTheme()">
+        <label for="login" class="MainLabels"> Введите логин:
+            <input type="text"  class="inp" oninput="SaveText(this)" id="login" name="login" placeholder="login" size="10" required>            
+        </label>
+
+        <label class="visiblenone" id="forlog"> fdgdfgdfgf</label> 
+
+        <label for="password" class="MainLabels"> Введите пароль:
+            <input type="password" class="inp" oninput="SaveText(this)" id="password" name="pas" placeholder="password" size="10" required> 
+        </label>
+
+        <label class="visiblenone" id="forpas">dfgfdg</label>
+
+        <label for="email" class="MainLabels"> Введите адрес:
+            <input type="email" class="inp" oninput="SaveText(this)" id="email" name="email" placeholder="email" size="10" required> 
+        </label>
+
+        <label class="visiblenone" id="formail">dfgdfg</label>
+
+        <label for="mailing" class="MainLabels2"> Подписаться на рассылку:
+            <input type="checkbox" class="inp2" id="mailing" name="mailing" value="true" size="10" checked> 
+        </label><br>
+        <section class="secForGender">
+            <label class="lab">Пол</label>
+            <label for="gender_m"><input type="radio" id="gender_m" name="gender" value="m" checked>Мужской</label><br>
+            <label for="gender_w"><input type="radio" id="gender_w" name="gender" value="w">Женский</label><br>
+        </section>
+        <section class="secForCity">
+            <label class="lab" class="lab">Укажите город:</label>
+            <select name="sity" class="sel">
+                <option value="Dubna">Дубна </option>
+                <option value="Moskva">Москва </option>
+                <option value="Saratov">Саратов </option>
+            </select>
+        </section>
+        <br>
+        <!--<button onclick="reg()">Отправить</button>-->
+        <input type="submit" class="inp" value="Отправить">
+        <input type="reset" class="inp" name="res" value="Сбросить">
+        
+        <!--<input type="button" class="inp" value="Приветствие" onclick="SayHello()">
+        <div class = "di" id = "divv"> </div>
+        <section  class="sec" id = "secti"></section>-->
+
+    </form>
+</body>
+</html>
+
