@@ -3,8 +3,9 @@
     session_start();
     if (!empty($_SESSION["login"]))
     {
-        require ("header.html");
-        require ("menu.html");
+        $title = "Дела";
+        require_once ("header.php");
+        require_once ("menu.html");
 
         ?>
 
@@ -15,7 +16,28 @@
 
                 <input type="submit" name = "sub2" value = "Добавить дело">
             </form>
-            <table border=1>
+            <div class="stage">
+                <h2>Запланировано</h2>
+                <?php
+                    $s = "SELECT * FROM `do_list` WHERE `author` = '".$_SESSION["login"]."' AND `stage` = 'Запланировано'";
+                    require ("tabledl.php");
+                ?>
+            </div>
+            <div class="stage">
+                <h2>В процессе</h2>
+                <?php
+                    $s = "SELECT * FROM `do_list` WHERE `author` = '".$_SESSION["login"]."' AND `stage` = 'В процессе'";
+                    require ("tabledl.php");
+                ?>
+            </div>
+            <div class="stage">
+                <h2>Завершено</h2>
+                <?php
+                    $s = "SELECT * FROM `do_list` WHERE `author` = '".$_SESSION["login"]."' AND `stage` = 'Завершено'";
+                    require ("tabledl.php");
+                ?>
+            </div>
+            <!-- <table border=1>
                 <tr>
                     <td> id</td>
                     <td> Автор </td>
@@ -24,39 +46,32 @@
                     <td> Удалить </td>
                     <td> Изменить </td>
                 </tr>
-                <?php
-                    // $host = "localhost";
-                    // $user = "root";
-                    // $pass = "";
-                    // $db = "users";
-                    
-                    // $con = mysqli_connect($host,$user,$pass) or die ("no connection");
-                    // mysqli_select_db($con,$db) or die("no db");
-                    require ("mysqli_connect.php");
-                    $s = "SELECT * FROM `do_list` WHERE `author` = '".$_SESSION["login"]."'";
-                    $res=mysqli_query($con,$s);
+                 <?php
+                    // require_once ("mysqli_connect.php");
+                    // $s = "SELECT * FROM `do_list` WHERE `author` = '".$_SESSION["login"]."'";
+                    // $res=mysqli_query($con,$s);
 
-                    while ($row = mysqli_fetch_row($res))
-                    {
-                    print ("<tr>");
-                    print("<td>".$row[0]."</td>");
-                    print("<td>".$row[1]."</td>");
-                    print("<td>".$row[2]."</td>");
-                    print("<td>".$row[3]."</td>");
-                    print("<td><a href='delete.php?id=".$row[0]."'>delete</a></td>");
-                    print("<td><a href='update.php?id=".$row[0]."'>update</a></td>");
-                    print ("</tr>");
-                    }
+                    // while ($row = mysqli_fetch_row($res))
+                    // {
+                    // print ("<tr>");
+                    // print("<td>".$row[0]."</td>");
+                    // print("<td>".$row[1]."</td>");
+                    // print("<td>".$row[2]."</td>");
+                    // print("<td>".$row[3]."</td>");
+                    // print("<td><a href='delete.php?id=".$row[0]."'>delete</a></td>");
+                    // print("<td><a href='update.php?id=".$row[0]."'>update</a></td>");
+                    // print ("</tr>");
+                    // }
 
-                ?>
-            </table>
+                ?> 
+            </table> -->
       
         </div>
         
         <?php
 
             
-            require ("footer.html");
+            require_once ("footer.html");
         
             if (isset($_GET["sub"])){
                 session_unset();

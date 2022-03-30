@@ -61,6 +61,9 @@ a:hover{
     flex-direction:column;
 
 }
+h2{
+    color:dimgrey;
+}
 .sec{
     display:flex;
     flex-direction:column;
@@ -112,5 +115,14 @@ input[type=submit]{
 
 
 }
+.stage{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border: 4px double grey;
+    margin-bottom:30px;
+    padding:10px;
 
+}
 

@@ -1,11 +1,12 @@
 <?php 
+session_start();
 if (!empty($_SESSION["login"]))
 {
 
-
-    require ("header.html");
-    require("menu.html");
-    require ("mysqli_connect.php");
+    $title = "Изменить дело";
+    require_once ("header.php");
+    require_once("menu.html");
+    require_once ("mysqli_connect.php");
 
 // $host = "localhost";
 // $user = "root";
@@ -30,6 +31,14 @@ if (!empty($_SESSION["login"]))
             $S = "UPDATE `do_list` SET `description` = '$desc' WHERE `do_list`.`id` = $id";
             mysqli_query($con, $S);
         }
+
+            $cat = $_GET["cat"];
+            $S = "UPDATE `do_list` SET `category` = '$cat' WHERE `do_list`.`id` = $id";
+            mysqli_query($con, $S);
+
+            $stage = $_GET["stage"];
+            $S = "UPDATE `do_list` SET `stage` = '$stage' WHERE `do_list`.`id` = $id";
+            mysqli_query($con, $S);
 
         Header("Location: content.php");
     }
@@ -60,10 +69,29 @@ if (!empty($_SESSION["login"]))
         <input type="text" name = "descri" placeholder = "<?php print($result[3]); ?>">
         </section>
 
+        <section>
+        <input class="lab" type="text" readonly value = "Категория">
+        <select name="cat">
+                <option <?php if ($result[4]=="Учеба") print "selected" ?>>Учеба</option>
+                <option <?php if ($result[4]=="Еда") print "selected" ?>>Еда</option>
+                <option <?php if ($result[4]=="Здоровье") print "selected" ?>>Здоровье</option>
+                <option <?php if ($result[4]=="Спорт") print "selected" ?>>Спорт</option>
+            </select>
+        </section>
+
+        <section>
+        <input class="lab" type="text" readonly value = "Этап">
+        <select name="stage">
+                <option <?php if ($_GET["option"]=="Запланировано") print "selected" ?>>Запланировано</option>
+                <option <?php if ($_GET["option"]=="В процессе") print "selected" ?>>В процессе</option>
+                <option <?php if ($_GET["option"]=="Завершено") print "selected" ?>>Завершено</option>
+            </select>
+        </section>
+
         <input type="submit" name = "sub" value = "Изменить">
     </form>
     </div>
     <?php
-        require("footer.html");
+        require_once("footer.html");
 }
     ?>

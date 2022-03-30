@@ -1,7 +1,8 @@
 <?php
+session_start();
 if (!empty($_SESSION["login"]))
 {
-    require ("mysqli_connect.php");
+    require_once ("mysqli_connect.php");
 // $host = "localhost";
 // $user = "root";
 // $pass = "";
@@ -15,6 +16,6 @@ if (!empty($_SESSION["login"]))
     $s = "DELETE FROM `do_list` WHERE `do_list`.`id` = ".$id;
 
     mysqli_query($con,$s);
-    header('Location: content.php')
+    header('Location: content.php');
 }
 ?>

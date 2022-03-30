@@ -3,12 +3,12 @@ session_start();
 if (!empty($_SESSION["login"])){
     Header("Location: content.php");
 }
-
-require ("header.html");
-require ("menu.html");
+$title = "Авторизация";
+require_once ("header.php");
+require_once ("menu.html");
     if (isset($_GET["sub"]))
     {
-        require ("mysqli_connect.php");
+        require_once ("mysqli_connect.php");
         // $host = "localhost";
         // $user = "root";
         // $pass = "";
@@ -63,5 +63,5 @@ require ("menu.html");
         </form>
 </div>
 <?php
-    require ("footer.html");
+    require_once ("footer.html");
 ?>

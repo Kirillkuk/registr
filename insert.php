@@ -2,14 +2,14 @@
     session_start();
 if (!empty($_SESSION["login"]))
 {
-
-        require ("header.html");
-        require ("menu.html");
+        $title = "Добавить дело";
+        require_once ("header.php");
+        require_once ("menu.html");
 
         if (isset($_GET["sub"])) 
         {
         //"DELETE FROM `books` WHERE `books`.`id` = 3"
-            require ("mysqli_connect.php");
+            require_once ("mysqli_connect.php");
         // $host = "localhost";
         // $user = "root";
         // $pass = "";
@@ -22,9 +22,10 @@ if (!empty($_SESSION["login"]))
             $name = $_GET["task"];
             $author = $_SESSION["login"];
             $desc = $_GET["desc"];
+            $category = $_GET["cat"];
         
 
-            $S = "INSERT INTO `do_list` (`id`, `author`, `name`, `description`) VALUES (NULL, '$author', '$name', '$desc')";
+            $S = "INSERT INTO `do_list` (`id`, `author`, `name`, `description`, `category`, `stage`) VALUES (NULL, '$author', '$name', '$desc', '$category', 'Запланировано')";
 
             mysqli_query($con, $S);
         
@@ -39,11 +40,19 @@ if (!empty($_SESSION["login"]))
 
             <input type="text" required name = "task" placeholder = "Дело">
             <input  type="text" class="descrip"  name = "desc" placeholder = "Описание">
+            <p>Категория:</p>
+            <select name="cat">
+                <option value="Учеба">Учеба</option>
+                <option value="Еда">Еда</option>
+                <option value="Здоровье">Здоровье</option>
+                <option value="Спорт">Спорт</option>
+            </select>
+
             <input type="submit" name = "sub" value = "Добавить">
         </form>  
         </div>
         <?php
-            require ("footer.html");
+            require_once ("footer.html");
 
 
 
